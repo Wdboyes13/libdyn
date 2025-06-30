@@ -20,9 +20,6 @@ Just run `make` to compile and make the library
 Run `./install.sh [PREFIX]` to install  
 With `[PREFIX]` being where you would like it installed (Headers in `[PREFIX]/include`, Library in `[PREFIX]/lib`)  
 
-## TODO 
-- Add CMake & pkg-config support  
-
 ## License
   
 A C Library for tools using Dynamic Memory Allocation  

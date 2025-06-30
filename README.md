@@ -12,6 +12,10 @@ Docs are
 - DynVec Docs are at [docs/dynvec.md](/docs/dynvec.md)  
 - DynMap Docs are at [docs/dynmap.md](/docs/dynmap.md)  
 - DynGet Docs are at [docs/dynget.md](/docs/dynget.md)  
+  
+Pre-compiled releases are available, to verify a download, get the matching `.sig` file   
+and use `gpg --verify <filaname>.zip.sig <filename>.zip` with `<filename>` being whatever filename you downloaded  
+Like macarm-dynlib or win64-dynlib  
    
 To Build you need a C Compiler, Library Archiver (`ar`), and GNU Make (`make`)  
 

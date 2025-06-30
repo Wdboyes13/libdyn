@@ -5,21 +5,22 @@ set -euo pipefail
 
 makerel() {
     PLATFORM=$1
-    mkdir -p $PLATFORM/dynmap
+    mkdir -p "$PLATFORM-dynlib/dynmap"
     echo "Copying Headers for $PLATFORM"
-    cp *.h $PLATFORM/
-    cp dynmap/*.h $PLATFORM/dynmap/
+    cp *.h "$PLATFORM-dynlib/"
+    cp dynmap/*.h "$PLATFORM-dynlib/dynmap/"
     echo "Copying Library for $PLATFORM"
-    cp release/libdyn-$PLATFORM.a $PLATFORM/libdyn.a  
+    cp "release/libdyn-$PLATFORM.a" "$PLATFORM-dynlib/libdyn.a"
     echo "Copying Other Stuff"
-    cp install.sh $PLATFORM/
-    cp -r docs $PLATFORM/
-    cp LICENSE $PLATFORM/
-    cp README.md $PLATFORM/
+    cp install.sh "$PLATFORM-dynlib/"
+    cp -r docs "$PLATFORM-dynlib/"
+    cp LICENSE "$PLATFORM-dynlib/"
+    cp README.md "$PLATFORM-dynlib/"
     echo "Creating Zipfile"
-    zip -r -9 $PLATFORM-dynlib.zip $PLATFORM/
-    rm -rf $PLATFORM/
-    mv $PLATFORM-dynlib.zip release/zipz/
+    zip -r -9 "$PLATFORM-dynlib.zip" "$PLATFORM-dynlib/"
+    rm -rf "$PLATFORM-dynlib/"
+    gpg --output "$PLATFORM-dynlib.zip.sig" --detach-sign "$PLATFORM-dynlib.zip"
+    mv "$PLATFORM-dynlib.zip" "$PLATFORM-dynlib.zip.sig" "release/zipz/"
 }
 
 makerel linux64

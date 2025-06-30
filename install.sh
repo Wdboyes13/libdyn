@@ -26,15 +26,15 @@ cp "./libdyn.a" "$PREFIX/lib/"
 echo "Making PKG-CONFIG File"
 cat > dynlib.pc <<EOF
 prefix=$PREFIX
-exec_prefix=${prefix}
-libdir=${exec_prefix}/lib
-includedir=${prefix}/include
+exec_prefix=\${prefix}
+libdir=\${exec_prefix}/lib
+includedir=\${prefix}/include
 
 Name: dynlib
 Description: A C dynamic memory toolset (DynMap, DynVec, DynGet)
 Version: 1.0.0
-Libs: -L${libdir} -ldyn
-Cflags: -I${includedir}
+Libs: -L\${libdir} -ldyn
+Cflags: -I\${includedir}
 EOF
 
 mv "dynlib.pc" "$PREFIX/lib/pkgconfig"

@@ -5,7 +5,7 @@
 ```
 dynmap - Dynamic Key->Value Maps  
          Supports:
-                   char* -> int    (mapci)
+                  char* -> int    (mapci)
                   char* -> float  (mapcf)
                   char* -> char*  (mapcc)
 

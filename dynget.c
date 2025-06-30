@@ -21,6 +21,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 char* getstr(const char* prompt){
     printf("%s", prompt);
+    fflush(stdout);
     int bufsize = 32;
     int len = 0;
     char *str = malloc(bufsize);

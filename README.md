@@ -21,11 +21,7 @@ Run `./install.sh [PREFIX]` to install
 With `[PREFIX]` being where you would like it installed (Headers in `[PREFIX]/include`, Library in `[PREFIX]/lib`)  
 
 ## TODO
-- Write docs
-- Write sh script to automate release libs/archives
-- Add more map types (Maybe)
-- Add more DynArray types
-- Add map/vector foreach iteration macros
+- Write sh script to automate release libs/archives  
 - Add CMake & pkg-config support
 - Make release v1.1.0 have zip files per platform, with install scripts, headers, docs, and lib
 

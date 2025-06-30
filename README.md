@@ -30,6 +30,7 @@ With `[PREFIX]` being where you would like it installed (Headers in `[PREFIX]/in
 - Clean up Map types with typedefs (So you can write `mapci` instead of `struct _mapci`)
 - Write docs
 - Add more map types (Maybe)
+- Make release v1.1.0 have zip files per platform, with install scripts, headers, docs, and lib
 
 ## License
   

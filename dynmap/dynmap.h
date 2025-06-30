@@ -87,7 +87,7 @@ void delmapcf(struct _mapcf* inmap);
     type varname = getmap(inmap, key, &_found_##varname, type); \
     if (!_found_##varname) exit(1)
 
-// Macros for easily creating a Map
+// QUICK MAP CREATE
 #define initcc(name) \
     struct _mapcc name = makemap(char*)
     

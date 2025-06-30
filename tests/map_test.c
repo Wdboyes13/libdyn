@@ -22,7 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <string.h>
 
 int testci(){
-    struct _mapci mymap = makemap(int);
+    mapci mymap = makemap(int);
     for (int i = 0; i < 15; i++){
         char buf[10];
         snprintf(buf, sizeof(buf), "Test %d", i);
@@ -40,7 +40,7 @@ int testci(){
 }
 
 int testcc(){
-    struct _mapcc mymap = makemap(char*);
+    mapcc mymap = makemap(char*);
     for (int i = 0; i < 15; i++){
         char buf[10];
         snprintf(buf, sizeof(buf), "Test %d", i);
@@ -58,7 +58,7 @@ int testcc(){
 }
 
 int testcf(){
-    struct _mapcf mymap = makemap(float);
+    mapcf mymap = makemap(float);
     for (int i = 0; i < 15; i++){
         float val = (float)i;
         char buf[20];

@@ -13,7 +13,10 @@ Docs are
 - DynMap Docs are at [docs/dynmap.md](/docs/dynmap.md)  
 - DynGet Docs are at [docs/dynget.md](/docs/dynget.md)  
   
-Pre-compiled releases are available, to verify a download, get the matching `.sig` file   
+Pre-compiled releases are available.  
+  
+To verify a download, get the matching `.sig` file  
+Get the public key to verify at [willdev2025.asc](/willdev2025.asc) and import it with `gpg --import willdev2025.asc`  
 and use `gpg --verify <filaname>.zip.sig <filename>.zip` with `<filename>` being whatever filename you downloaded  
 Like macarm-dynlib or win64-dynlib  
    

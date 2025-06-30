@@ -22,7 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <string.h>
 
 int testci(){
-    QKINITMAP(int, mymap);
+    QKINITMAP_INT(mymap);
     for (int i = 0; i < 15; i++){
         char buf[10];
         snprintf(buf, sizeof(buf), "Test %d", i);
@@ -40,7 +40,7 @@ int testci(){
 }
 
 int testcc(){
-    QKINITMAP(char*, mymap);
+    QKINITMAP_CHAR(mymap);
     for (int i = 0; i < 15; i++){
         char buf[10];
         snprintf(buf, sizeof(buf), "Test %d", i);
@@ -58,7 +58,7 @@ int testcc(){
 }
 
 int testcf(){
-    QKINITMAP(float, mymap);
+    QKINITMAP_FLOAT(mymap);
     for (int i = 0; i < 15; i++){
         float val = (float)i;
         char buf[20];

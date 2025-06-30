@@ -53,13 +53,6 @@ void delmapcf(struct _mapcf* inmap);
 
 // === Macro Magic Time ===
 
-// CREATE NEW MAP
-#define makemap(type) _Generic((type)0, \
-    char*: makemapcc, \
-    int: makemapci, \
-    float: makemapcf \
-)()
-
 // INSERT INTO MAP
 #define insertmap(map, key, val) _Generic((val), \
     char*: insertmapcc, \
@@ -68,7 +61,7 @@ void delmapcf(struct _mapcf* inmap);
 )(&(map), key, val)
 
 // GET VALUE (with found pointer)
-#define getmap(map, key, foundptr) _Generic((map)0, \
+#define getmap(map, key, foundptr) _Generic((map), \
     struct _mapcc: getmapcc, \
     struct _mapci: getmapci, \
     struct _mapcf: getmapcf \
@@ -84,22 +77,10 @@ void delmapcf(struct _mapcf* inmap);
 // QUICK GET + CHECK
 #define QKGETMAP(type, varname, inmap, key)             \
     bool _found_##varname = false;                      \
-    type varname = getmap(inmap, key, &_found_##varname, type); \
+    type varname = getmap(inmap, key, &_found_##varname); \
     if (!_found_##varname) exit(1)
 
 // QUICK MAP CREATE
-#define initcc(name) \
-    struct _mapcc name = makemap(char*)
-    
-#define initci(name) \
-    struct _mapci name = makemap(int)
-    
-#define initcf(name) \
-    struct _mapcf name = makemap(float)
-    
-#define QKINITMAP(type, name) \
-    _Generic((type), \
-    char*: initcc, \
-    int: initci, \
-    float: initcf \
-)(name)
+#define QKINITMAP_CHAR(name) struct _mapcc name = makemapcc()
+#define QKINITMAP_INT(name)  struct _mapci name = makemapci()
+#define QKINITMAP_FLOAT(name) struct _mapcf name = makemapcf()

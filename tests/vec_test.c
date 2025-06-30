@@ -22,8 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <stdio.h>
 
 int main(){
-    DynArray* arr = malloc(sizeof(DynArray*));
-    da_init(arr);
+    DECLDynArray(arr);
     da_push(arr, 10);
     int val = da_get(arr, 0);
     printf("Expected 10 -> Got %d\n", val);

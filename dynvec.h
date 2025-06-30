@@ -25,8 +25,14 @@ typedef struct {
 } DynArray;
 
 void da_init(DynArray* da);
+
 void da_push(DynArray* da, int value);
-void da_free(DynArray* da);
 int da_get(DynArray* da, int index);
 void da_print(DynArray* da);
+
 int da_remove(DynArray *da, int index);
+void da_free(DynArray* da);
+
+#define DECLDynArray(name) \
+        DynArray* name = malloc(sizeof(DynArray*)); \
+        da_init(name)

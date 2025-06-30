@@ -47,7 +47,8 @@ void da_push(DynArray *da, int value){
 void da_free(DynArray* da){
     free(da->data);
     da->data = NULL;
-    da->size = da->capacity = 0;
+    da->size = da->capacity = 0;  
+    free(da);
 }
 
 int da_get(DynArray *da, int index){

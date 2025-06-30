@@ -2,24 +2,17 @@
 ## This Library is licensed under GPLv3 see the bottom for more info, or [LICENSE](/LICENSE)
 
 ## Library Parts
-```
-dynmap - Dynamic Key->Value Maps  
-         Supports:
-                  char* -> int    (mapci)
-                  char* -> float  (mapcf)
-                  char* -> char*  (mapcc)
-
-dynget - Dynamic String Input Getting + Prompts  
-         Similar to pythons input()  
-
-dynvec - Dynamic Arrays  
-         Currently only int   
-```
+- DynVec - Dynamic `int` array  
+- DynMap - Key->Value Maps  
+- DynGet - Dynamic buffer input  
 
 ## How to build and use
 
-### Examples are in tests/ - Currently we don't have separate docs
-  
+Docs are  
+- DynVec Docs are at [docs/dynvec.md](/docs/dynvec.md)  
+- DynMap Docs are at [docs/dynmap.md](/docs/dynmap.md)  
+- DynGet Docs are at [docs/dynget.md](/docs/dynget.md)  
+   
 To Build you need a C Compiler, Library Archiver (`ar`), and GNU Make (`make`)  
 
 Just run `make` to compile and make the library   

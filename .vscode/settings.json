@@ -20,6 +20,15 @@
         "charconv": "c",
         "compare": "c",
         "tuple": "c",
-        "utility": "c"
+        "utility": "c",
+        "array": "c",
+        "deque": "c",
+        "span": "c",
+        "string": "c",
+        "string_view": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "flat_map": "c",
+        "stacktrace": "c"
     }
 }

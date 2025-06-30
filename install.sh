@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PREFIX=$1
 
@@ -22,6 +22,16 @@ done
 
 echo "Copying ./libdyn.a to $PREFIX/lib/"
 cp "./libdyn.a" "$PREFIX/lib/"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo "Copying ./libdyn.so to $PREFIX/lib/"
+    cp "./libdyn.so" "$PREFIX/lib/"
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+   echo "Copying ./libdyn.dylib to $PREFIX/lib/"
+    cp "./libdyn.dylib" "$PREFIX/lib/"
+fi
 
 echo "Making PKG-CONFIG File"
 cat > dynlib.pc <<EOF

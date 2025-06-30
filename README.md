@@ -6,8 +6,8 @@
 - DynMap - Key->Value Maps  
 - DynGet - Dynamic buffer input  
 
-## How to build and use
-__We are currently testing how making shared libraries an option would go__  
+## How to build and use 
+__Shared libraries will not be available for windows__  
 
 Docs are  
 - DynVec Docs are at [docs/dynvec.md](/docs/dynvec.md)  

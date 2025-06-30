@@ -86,8 +86,19 @@ void delmapcf(struct _mapcf* inmap);
     bool _found_##varname = false;                      \
     type varname = getmap(inmap, key, &_found_##varname, type); \
     if (!_found_##varname) exit(1)
+
+#define initcc(name) \
+    struct _mapcc name = makemap(char*)
     
-// === Typedefs ===
-typedef struct _mapcc mapcc;
-typedef struct _mapci mapci;
-typedef struct _mapcf mapcf;
+#define initci(name) \
+    struct _mapci name = makemap(int)
+    
+#define initcf(name) \
+    struct _mapcf name = makemap(float)
+    
+#define QKINITMAP(type, name) \
+    _Generic((type), \
+    char*: initcc,
+    int: initci,
+    float: initcf
+)(name)

@@ -24,7 +24,12 @@ To Build you need a C Compiler, Library Archiver (`ar`), and GNU Make (`make`)
 Just run `make` to compile and make the library   
 
 Run `./install.sh [PREFIX]` to install  
-With `[PREFIX]` being where you would like it installed (Headers in `[PREFIX]/include`, Library in `[PREFIX]/lib`)
+With `[PREFIX]` being where you would like it installed (Headers in `[PREFIX]/include`, Library in `[PREFIX]/lib`)  
+
+## TODO
+- Clean up Map types with typedefs (So you can write `mapci` instead of `struct _mapci`)
+- Write docs
+- Add more map types (Maybe)
 
 ## License
   

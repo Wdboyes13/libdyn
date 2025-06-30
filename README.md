@@ -20,10 +20,8 @@ Just run `make` to compile and make the library
 Run `./install.sh [PREFIX]` to install  
 With `[PREFIX]` being where you would like it installed (Headers in `[PREFIX]/include`, Library in `[PREFIX]/lib`)  
 
-## TODO
-- Write sh script to automate release libs/archives  
-- Add CMake & pkg-config support
-- Make release v1.1.0 have zip files per platform, with install scripts, headers, docs, and lib
+## TODO 
+- Add CMake & pkg-config support  
 
 ## License
   

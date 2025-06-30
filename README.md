@@ -7,6 +7,7 @@
 - DynGet - Dynamic buffer input  
 
 ## How to build and use
+__We are currently testing how making shared libraries an option would go__  
 
 Docs are  
 - DynVec Docs are at [docs/dynvec.md](/docs/dynvec.md)  

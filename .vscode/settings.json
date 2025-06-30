@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "*.dbclient-js": "javascript",
+        "*.s": "arm",
+        "stdio.h": "c",
+        "__node_handle": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "__locale": "c",
+        "khash.h": "c",
+        "dynmap.h": "c",
+        "assert.h": "c",
+        "__tree": "c",
+        "map": "c",
+        "format": "c",
+        "type_traits": "c",
+        "limits": "c",
+        "ratio": "c",
+        "variant": "c",
+        "charconv": "c",
+        "compare": "c",
+        "tuple": "c",
+        "utility": "c"
+    }
+}

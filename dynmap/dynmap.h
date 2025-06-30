@@ -86,3 +86,8 @@ void delmapcf(struct _mapcf* inmap);
     bool _found_##varname = false;                      \
     type varname = getmap(inmap, key, &_found_##varname, type); \
     if (!_found_##varname) exit(1)
+    
+// === Typedefs ===
+typedef struct _mapcc mapcc;
+typedef struct _mapci mapci;
+typedef struct _mapcf mapcf;

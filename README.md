@@ -4,9 +4,10 @@
 ## Library Parts
 ```
 dynmap - Dynamic Key->Value Maps  
-         Supports char* -> int  
-                  char* -> float  
-                  char* -> char*  
+         Supports:
+                   char* -> int    (mapci)
+                  char* -> float  (mapcf)
+                  char* -> char*  (mapcc)
 
 dynget - Dynamic String Input Getting + Prompts  
          Similar to pythons input()  

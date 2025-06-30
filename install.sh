@@ -26,11 +26,13 @@ cp "./libdyn.a" "$PREFIX/lib/"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Copying ./libdyn.so to $PREFIX/lib/"
     cp "./libdyn.so" "$PREFIX/lib/"
+    patchelf --set-rpath '$ORIGIN' "$PREFIX/lib/libdyn.so"
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
    echo "Copying ./libdyn.dylib to $PREFIX/lib/"
     cp "./libdyn.dylib" "$PREFIX/lib/"
+    install_name_tool -id @rpath/libdyn.dylib "$PREFIX/lib/libdyn.dylib"
 fi
 
 echo "Making PKG-CONFIG File"

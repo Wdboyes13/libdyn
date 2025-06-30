@@ -27,13 +27,12 @@ makerelso() {
 
 makerela() {
     PLATFORM=$1
-    SOEXT=$2
     mkdir -p "$PLATFORM-dynlib/dynmap"
     echo "Copying Headers for $PLATFORM"
     cp *.h "$PLATFORM-dynlib/"
     cp dynmap/*.h "$PLATFORM-dynlib/dynmap/"
     echo "Copying Library for $PLATFORM"
-    cp "release/libdyn-$PLATFORM.a" "$PLATFORM-dynlib/libdyn.a"
+    cp "release/libdyn-$PLATFORM.lib" "$PLATFORM-dynlib/libdyn.lib"
     echo "Copying Other Stuff"
     cp install.sh "$PLATFORM-dynlib/"
     cp -r docs "$PLATFORM-dynlib/"

@@ -6,16 +6,25 @@ SRC = dynget.c dynvec.c dynmap/dynmapcc.c \
 
 OBJS = $(patsubst %.c,%.o,$(SRC))
 
-OUTA = libdyn.a
-OUTS ?= libdyn.so
+OUTA ?= libdyn.a
 
-SOFLAG ?= -shared
+PLATFORM?=osx
 
 PKGOUT = libdyn.tar.gz
 PKGFILEs = install.sh Makefile test.sh README.txt tests/ dynmap/ \
 		   dynget.c dynget.h dynvec.c dynvec.h
 
 CFLAGS = -O2 -std=c11 -Wall -Wextra -fPIC
+
+ifeq ($(PLATFORM),osx)
+LDFLAGS = -install_name @rpath/libdyn.dylib 
+SOFLAG = -dynamiclib
+OUTS ?= libdyn.dylib
+else ifeq ($(PLATFORM),linux)
+LDFLAGS = -Wl,-soname,libdyn.so -Wl,-rpath,'$$ORIGIN'
+SOFLAG = -shared
+OUTS ?= libdyn.so
+endif
 
 DOSHARED ?= Y
 
@@ -26,7 +35,7 @@ all: $(OUTA)
 endif
 
 $(OUTS): $(OBJS)
-	$(CC) $(SOFLAG) -o $@ $^
+	$(CC) $(SOFLAG) -o $@ $^ $(LDFLAGS)
 
 $(OUTA): $(OBJS)
 	$(AR) rcs $@ $^

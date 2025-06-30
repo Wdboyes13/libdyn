@@ -9,13 +9,15 @@ OUT = libdyn.a
 
 PKGOUT = libdyn.tar.gz
 PKGFILEs = install.sh Makefile test.sh README.txt tests/ dynmap/ \
-		   dynget.c dynget.h dynvec.c dynvec.h \
+		   dynget.c dynget.h dynvec.c dynvec.h
+
+CFLAGS = -O2 -std=c11 -Wall -Wextra
 
 $(OUT): $(OBJS)
 	$(AR) rcs $@ $^
 
 %.o: %.c 
-	$(CC) -c $< -o $@
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
 	rm -f $(OBJS) $(OUT)

@@ -20,6 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 // === Value Types ===
 struct mapkvpcc { char* key; char* value; int used; };
@@ -78,7 +79,7 @@ void delmapcf(struct _mapcf* inmap);
 #define QKGETMAP(type, varname, inmap, key)             \
     bool _found_##varname = false;                      \
     type varname = getmap(inmap, key, &_found_##varname); \
-    if (!_found_##varname) exit(1)
+    if (!_found_##varname) fprintf(stderr, "Could not find value for key %s in Map", key)
 
 // QUICK MAP CREATE
 #define QKINITMAP_CHAR(name) struct _mapcc name = makemapcc()

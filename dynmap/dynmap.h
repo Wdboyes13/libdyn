@@ -98,7 +98,7 @@ void delmapcf(struct _mapcf* inmap);
     
 #define QKINITMAP(type, name) \
     _Generic((type), \
-    char*: initcc,
-    int: initci,
-    float: initcf
+    char*: initcc, \
+    int: initci, \
+    float: initcf \
 )(name)

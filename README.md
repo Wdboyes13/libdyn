@@ -17,7 +17,7 @@ dynvec - Dynamic Arrays
 
 ## How to build and use
 
-### Examples are in tests/ 
+### Examples are in tests/ - Currently we don't have separate docs
   
 To Build you need a C Compiler, Library Archiver (`ar`), and GNU Make (`make`)  
 

@@ -68,10 +68,10 @@ void delmapcf(struct _mapcf* inmap);
 )(&(map), key, val)
 
 // GET VALUE (with found pointer)
-#define getmap(map, key, foundptr, type) _Generic((type)0, \
-    char*: getmapcc, \
-    int: getmapci, \
-    float: getmapcf \
+#define getmap(map, key, foundptr) _Generic((map)0, \
+    struct _mapcc: getmapcc, \
+    struct _mapci: getmapci, \
+    struct _mapcf: getmapcf \
 )(map, key, foundptr)
 
 // DELETE MAP
